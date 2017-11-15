@@ -1,8 +1,7 @@
 # Veterinarian-Schedule
 See ReadMe
 
-Assignment 3
-This is an individual assignment. You will design the administration program for a veterinary office: This office attends to three different kinds of animals: Dogs, Birds, and Fish. You are to capture these with their respective classes. Each subclass of animals will have 5 different varieties. You are to define what those are for each kind of animal.
+You will design the administration program for a veterinary office: This office attends to three different kinds of animals: Dogs, Birds, and Fish. You are to capture these with their respective classes. Each subclass of animals will have 5 different varieties. You are to define what those are for each kind of animal.
 You should keep track, for every animal, the following information:
 
 •	Owner.
