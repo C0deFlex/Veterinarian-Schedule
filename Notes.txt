@@ -1,0 +1,3 @@
+Abstract classes provide a “default” behavior implementation for future classes extending and possibly replacing their behavior.
+
+Abstract classes may contain constructors to initialize all the variables so that extended classes may use them.
