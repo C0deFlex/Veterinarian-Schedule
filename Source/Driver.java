@@ -20,8 +20,19 @@ public class Driver
 {
 	public static void main(String[] args)
 	{
+		Registry items = new Registry();
+
 		Dog yadda = new Dog("Yipper",5);
 
-		System.out.println(yadda);
+		items.addAnimal(yadda);
+
+		yadda.addMedicalHistory("Blind", true);
+		yadda.addMedicalHistory("Mute", false);
+
+		System.out.println(yadda.getMedicalHistory());
+
+		yadda.setPathologyStatus("Blind", true);
+
+		System.out.println(yadda.getMedicalHistory());
 	}
 }
