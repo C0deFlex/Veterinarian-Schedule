@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Vector;
 
@@ -28,6 +29,7 @@ public abstract class Animal
 	{
 		this.name = name;
 		this.age = age;
+		this.medicalHistory = new HashMap<String, Boolean>();
 	}
 
 	public Owner getOwner ()
@@ -45,9 +47,14 @@ public abstract class Animal
 		return age;
 	}
 
-	public Map<String, Boolean> getMedicalHistory ()
+	public String getMedicalHistory ()
 	{
-		return medicalHistory;
+		String output = new String();
+
+		for (Map.Entry<String, Boolean> entry : this.medicalHistory.entrySet())
+			output += "Pathology: " + entry.getKey() + " | Active: " + entry.getValue() + "\n";
+
+		return output;
 	}
 
 	public Vector<String> getVaccinations ()
@@ -87,7 +94,7 @@ public abstract class Animal
 	{
 		if (this.medicalHistory.containsKey(pathology))
 		{
-			this.medicalHistory.replace(pathology,cured);
+			this.medicalHistory.replace(pathology,!cured);
 			return true;
 		}
 
