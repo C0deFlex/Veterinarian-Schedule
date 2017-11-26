@@ -23,7 +23,7 @@ public abstract class Animal
 	private int age;
 	private Map<String, Boolean> medicalHistory;
 	private Vector<String> vaccinations;
-	private Appointments appointments;
+	private Vector<Appointment> appointments;
 
 	public Animal(String name, int age)
 	{
@@ -62,7 +62,7 @@ public abstract class Animal
 		return vaccinations;
 	}
 
-	public Appointments getAppointments ()
+	public Vector<Appointment> getAppointments ()
 	{
 		return appointments;
 	}
@@ -115,6 +115,12 @@ public abstract class Animal
 		}
 
 		return false;
+	}
+	
+	public void addAppointment()
+	{
+		Appointment a = new Appointment();
+		this.appointments.add(a);
 	}
 
 	@Override

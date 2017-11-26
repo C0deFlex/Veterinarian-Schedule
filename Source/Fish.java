@@ -14,6 +14,8 @@
 
 public class Fish extends Animal
 {
+	private enum fishType { BETA, GOLDFISH, ANGLERFISH, TETRADONTIDAE, EEL }
+	
 	Fish(String name, int age)
 	{
 		super(name,age);

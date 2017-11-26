@@ -1,3 +1,5 @@
+import java.util.Comparator;
+
 /**
  * CS 141: Intro to Programming and Problem Solving
  * Professor: Edwin Rodriguez
@@ -6,17 +8,16 @@
  * 
  *
  * --- Veterinarian Scheduler ---
- *           Bird.java
+ *           SortAppointmentByOwner.java
  * ------------------------------
  * Steven Oseguera - scoseguera@cpp.edu
  *
  */
-
-public class Bird extends Animal
+ 
+public class SortAppointmentByOwner implements Comparator<Animal>
 {
-	private enum birdType { UMBRELLACOCKATOO, AFRICANGRAY, CONURE, COCKATIEL, PARAKEET }
-	Bird(String name, int age)
+	public int compare(Animal a, Animal b)
 	{
-		super(name,age);
+		return -1;
 	}
 }
