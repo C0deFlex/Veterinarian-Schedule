@@ -15,7 +15,9 @@
 public class Dog extends Animal
 {
 	public static final String[] supportedDogs = {"Pitbul Terrier","Labrador Retriever", "Boston Terrier", "Golden Retriever", "King Charles Spaniel" };
+	
 	public enum dogType { PITBULLTERRIER, LABRADORRETRIEVER, BOSTONTERRIER, GOLDENRETRIEVER, KINGCHARLESSPANIEL }
+	
 	private dogType type;
 	
 	Dog(String name, int age)
@@ -29,4 +31,8 @@ public class Dog extends Animal
 		this.type = UserInterface.askForAcceptedDogs();
 	}
 	
+	public String getDogType()
+	{
+		return this.type.toString();
+	}
 }

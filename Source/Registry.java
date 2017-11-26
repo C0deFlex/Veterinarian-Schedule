@@ -42,7 +42,8 @@ public class Registry implements Serializable
 	{
 		UserInterface.welcomeScreen();
 		
-		Animal a = new Dog();
+		Dog b = new Dog();
+		System.out.println(b.getDogType());
 		//a.addAppointment();
 	}
 }

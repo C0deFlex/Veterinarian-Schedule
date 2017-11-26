@@ -81,13 +81,15 @@ public abstract class UserInterface
 		{
 			System.out.println("Currently we support the following:");
 			for (int x = 0; x < Dog.supportedDogs.length; x++)
-				System.out.println((x + 1) + Dog.supportedDogs[x]);
+				System.out.println((x + 1)+ ". " + Dog.supportedDogs[x]);
 			
 			userInput = scan.nextLine();
 			
-			/** Exception can occur here */
-			if (Integer.parseInt(userInput) > 5 && Integer.parseInt(userInput) < 0)
+			/** TODO Exception can occur here */
+			if (Integer.parseInt(userInput) > 6 && Integer.parseInt(userInput) < 1)
 				continue;
+			
+		}while (!askForConfirmation(userInput));
 			
 			switch ( Integer.parseInt(userInput) )
 			{
@@ -97,11 +99,11 @@ public abstract class UserInterface
 				}
 				case 2:
 				{
-					return Dog.dogType.BOSTONTERRIER;
+					return Dog.dogType.LABRADORRETRIEVER;
 				}
 				case 3:
 				{
-					return Dog.dogType.LABRADORRETRIEVER;
+					return Dog.dogType.BOSTONTERRIER;
 				}
 				case 4:
 				{
@@ -112,8 +114,6 @@ public abstract class UserInterface
 					return Dog.dogType.KINGCHARLESSPANIEL;
 				}
 			}
-			
-		}while (askForConfirmation(userInput));
 		
 		return null;
 	}
