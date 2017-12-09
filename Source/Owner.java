@@ -24,16 +24,9 @@ public class Owner
 
 	public Owner()
 	{
-		scan = new Scanner(System.in);
-	}
-
-	private String initName()
-	{
-		while(true)
-		{
-
-		}
-		
+		name = UserInterface.askOwnerInformation("name");
+		address = UserInterface.askOwnerInformation("address");
+		phoneNumber = UserInterface.askOwnerInformation("phone");
 	}
 
 	public String getName ()

@@ -1,3 +1,5 @@
+import java.io.Serializable;
+
 /**
  * CS 141: Intro to Programming and Problem Solving
  * Professor: Edwin Rodriguez
@@ -12,14 +14,26 @@
  *
  */
 
-public class Fish extends Animal
+public class Fish extends Animal implements Serializable
 {
-	private enum fishType { BETA, GOLDFISH, ANGLERFISH, TETRADONTIDAE, EEL }
+	public static final String[] supportedFish = {"Beta", "Goldfish", "Anglerfish", "Tetradontidae", "Eel" };
 	
-	Fish(String name, int age)
+	public enum fishType { BETA, GOLDFISH, ANGLERFISH, TETRADONTIDAE, EEL }
+	
+	private fishType type;
+	
+	Fish()
 	{
-		super(name,age);
+		super(Animal.animalType.FISH);
+		this.type = UserInterface.askForAcceptedFish();
 	}
-
-
+	
+	public String getFishType()
+	{
+		return this.type.toString();
+	}
+	
+	@Override
+	public String toString () { return ("Animal Name: " + super.getName() + "\nAnimal Age: " + super.getAge() + "\nAnimal Type: FISH" + "\nAnimal Subtype: " + this.getFishType() + "\nOwner Name: " + this.getOwner().getName()
+			+ "\nOwner Address: " + this.getOwner().getAddress() + "\nOwner Phone: " + getOwner().getPhoneNumber()); }
 }

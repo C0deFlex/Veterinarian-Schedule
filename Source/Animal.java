@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Vector;
@@ -16,7 +17,7 @@ import java.util.Vector;
  *
  */
 
-public abstract class Animal
+public abstract class Animal implements Serializable
 {
 	private Owner owner;
 	private String name;
@@ -24,12 +25,17 @@ public abstract class Animal
 	private Map<String, Boolean> medicalHistory;
 	private Vector<String> vaccinations;
 	private Vector<Appointment> appointments;
-
-	public Animal(String name, int age)
+	public enum animalType {DOG, BIRD, FISH}
+	
+	private animalType type;
+	
+	public Animal(animalType type)
 	{
-		this.name = name;
-		this.age = age;
+		this.name = UserInterface.askAnimalName();
+		this.age = UserInterface.askAnimaleAge();
 		this.medicalHistory = new HashMap<String, Boolean>();
+		owner = new Owner();
+		this.type = type;
 	}
 
 	public Owner getOwner ()
@@ -119,11 +125,11 @@ public abstract class Animal
 	
 	public void addAppointment()
 	{
-		Appointment a = new Appointment();
-		this.appointments.add(a);
+		this.appointments.add(new Appointment());
 	}
 
 	@Override
-	public String toString () { return ("Animal Name: " + this.name + "\nAnimal Age: " + this.age); }
+	public String toString () { return ("Animal Name: " + this.name + "\nAnimal Age: " + this.age + "\nAnimal Type: " + this.type + "\nOwner Name: " + this.getOwner().getName()
+											+ "\nOwner Address: " + this.getOwner().getAddress() + "\nOwner Phone: " + getOwner().getPhoneNumber()); }
 
 }
